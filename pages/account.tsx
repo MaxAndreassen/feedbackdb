@@ -114,10 +114,10 @@ export default function Account({ user }: { user: User }) {
           footer={<p>Please use 64 characters at maximum.</p>}
         >
           <div className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? (
+            {!isLoading ? (
               `${
-                userDetails.full_name ??
-                `${userDetails.first_name} ${userDetails.last_name}`
+                userDetails?.full_name ??
+                `${userDetails?.first_name} ${userDetails?.last_name}`
               }`
             ) : (
               <div className="h-8 mb-6">
